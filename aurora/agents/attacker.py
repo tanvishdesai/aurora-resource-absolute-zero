@@ -24,8 +24,17 @@ class AttackerAgent:
 
         try:
             response_text = self.llm_handler.generate(prompt, system_instruction=self.system_prompt)
-            # Clean up potential markdown formatting if the model adds it strictly for JSON
-            text = response_text.replace("```json", "").replace("```", "").strip()
+            # Robust JSON extraction: look for first { and last }
+            text = response_text.strip()
+            start_idx = text.find('{')
+            end_idx = text.rfind('}')
+            
+            if start_idx != -1 and end_idx != -1:
+                text = text[start_idx : end_idx + 1]
+            else:
+                # Fallback to simple cleanup if braces not strictly found (unlikely for valid JSON)
+                text = text.replace("```json", "").replace("```", "").strip()
+
             return json.loads(text)
         except Exception as e:
             print(f"Error generating scenario: {e}")

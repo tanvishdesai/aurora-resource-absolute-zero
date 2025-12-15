@@ -48,7 +48,17 @@ class DefenderAgent:
         try:
             # Note: Max retries loop removed as rate limits are not an issue with local models
             response_text = self.llm_handler.generate(prompt, system_instruction=self.system_prompt)
-            text = response_text.replace("```json", "").replace("```", "").strip()
+            
+            # Robust JSON extraction
+            text = response_text.strip()
+            start_idx = text.find('{')
+            end_idx = text.rfind('}')
+            
+            if start_idx != -1 and end_idx != -1:
+                text = text[start_idx : end_idx + 1]
+            else:
+                text = text.replace("```json", "").replace("```", "").strip()
+                
             return json.loads(text)
         except Exception as e:
             print(f"Error (Defender): {e}")
