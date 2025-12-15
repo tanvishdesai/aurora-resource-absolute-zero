@@ -1,15 +1,11 @@
 import json
-import google.generativeai as genai
 from aurora import config
 from aurora.agents.prompts import ATTACKER_SYSTEM_PROMPT
 
 class AttackerAgent:
-    def __init__(self, model_name=config.MODEL_NAME):
-        self.model = genai.GenerativeModel(
-            model_name=model_name,
-            system_instruction=ATTACKER_SYSTEM_PROMPT,
-            generation_config=config.GENERATION_CONFIG
-        )
+    def __init__(self, llm_handler):
+        self.llm_handler = llm_handler
+        self.system_prompt = ATTACKER_SYSTEM_PROMPT
 
     def generate_scenario(self, difficulty_level, defender_performance):
         """
@@ -26,31 +22,15 @@ class AttackerAgent:
         - Number of nodes: {max(2, difficulty_level * 2)}
         """
 
-        max_retries = 3
-        for attempt in range(max_retries + 1):
-            try:
-                response = self.model.generate_content(prompt)
-                # Clean up potential markdown formatting if the model adds it strictly for JSON
-                text = response.text.replace("```json", "").replace("```", "").strip()
-                return json.loads(text)
-            except Exception as e:
-                is_rate_limit = "429" in str(e) or "quota" in str(e).lower()
-                
-                if is_rate_limit and attempt < max_retries:
-                    print(f"⚠️  Rate limit hit (Attacker). keys available. Rotating key and retrying... (Attempt {attempt+1}/{max_retries})")
-                    config.rotate_api_key()
-                    # Re-initialize model to pick up new config/key if necessary
-                    # (Note: genai.configure might adhere globally, but re-init is safer)
-                    self.model = genai.GenerativeModel(
-                        model_name=self.model.model_name,
-                        system_instruction=self.model._system_instruction,
-                        generation_config=self.model._generation_config
-                    )
-                    continue
-                
-                print(f"Error generating scenario: {e}")
-                # Fallback for stability
-                return self._fallback_scenario()
+        try:
+            response_text = self.llm_handler.generate(prompt, system_instruction=self.system_prompt)
+            # Clean up potential markdown formatting if the model adds it strictly for JSON
+            text = response_text.replace("```json", "").replace("```", "").strip()
+            return json.loads(text)
+        except Exception as e:
+            print(f"Error generating scenario: {e}")
+            # Fallback for stability
+            return self._fallback_scenario()
 
     def _fallback_scenario(self):
         return {

@@ -1,16 +1,12 @@
 import json
-import google.generativeai as genai
 from aurora import config
 from aurora.agents.prompts import DEFENDER_SYSTEM_PROMPT
 
 class DefenderAgent:
-    def __init__(self, policy_db=None, model_name=config.MODEL_NAME):
-        self.model = genai.GenerativeModel(
-            model_name=model_name, # "gemini-2.0-flash-exp"
-            system_instruction=DEFENDER_SYSTEM_PROMPT,
-            generation_config=config.GENERATION_CONFIG
-        )
+    def __init__(self, llm_handler, policy_db=None):
+        self.llm_handler = llm_handler
         self.policy_db = policy_db # Store reference to the DB
+        self.system_prompt = DEFENDER_SYSTEM_PROMPT
 
     def generate_policy(self, scenario):
         """
@@ -49,28 +45,14 @@ class DefenderAgent:
         """
 
         # 3. GENERATION
-        max_retries = 3
-        for attempt in range(max_retries + 1):
-            try:
-                response = self.model.generate_content(prompt)
-                text = response.text.replace("```json", "").replace("```", "").strip()
-                return json.loads(text)
-            except Exception as e:
-                is_rate_limit = "429" in str(e) or "quota" in str(e).lower()
-                
-                if is_rate_limit and attempt < max_retries:
-                    print(f"⚠️  Rate limit hit (Defender). Rotating key... (Attempt {attempt+1})")
-                    config.rotate_api_key()
-                    # Re-instantiate model with new key
-                    self.model = genai.GenerativeModel(
-                        model_name=self.model.model_name,
-                        system_instruction=self.model._system_instruction,
-                        generation_config=self.model._generation_config
-                    )
-                    continue
-
-                # print(f"Error: {e}") # debug
-                return self._fallback_policy(scenario)
+        try:
+            # Note: Max retries loop removed as rate limits are not an issue with local models
+            response_text = self.llm_handler.generate(prompt, system_instruction=self.system_prompt)
+            text = response_text.replace("```json", "").replace("```", "").strip()
+            return json.loads(text)
+        except Exception as e:
+            print(f"Error (Defender): {e}")
+            return self._fallback_policy(scenario)
 
     def _fallback_policy(self, scenario):
         # Naive First-Fit

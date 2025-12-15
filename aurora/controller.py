@@ -8,21 +8,23 @@ from aurora.evolution.meta_prompts import MetaPromptEvolver
 from aurora.validation import ScenarioValidator
 
 class MetaEvolutionaryController:
-    def __init__(self):
+    def __init__(self, llm_handler):
         # Components
+        self.llm_handler = llm_handler
+
         # 1. Initialize DB first
         self.policy_db = PolicyDatabase() 
         self.validator = ScenarioValidator()
-        self.attacker = AttackerAgent()
+        self.attacker = AttackerAgent(llm_handler=self.llm_handler)
         # 2. Pass DB to Defender
-        self.defender = DefenderAgent(policy_db=self.policy_db)
+        self.defender = DefenderAgent(llm_handler=self.llm_handler, policy_db=self.policy_db)
         
         self.simulator = UnifiedResourceSimulator()
         self.reward_engine = MultiObjectiveRewardEngine()
         
         # State & Learning
         self.curriculum = CurriculumManager()
-        self.prompt_evolver = MetaPromptEvolver()
+        self.prompt_evolver = MetaPromptEvolver(llm_handler=self.llm_handler)
         
         self.iteration_count = 0
 
@@ -98,28 +100,18 @@ class MetaEvolutionaryController:
             
             new_attacker_p, new_defender_p = self.prompt_evolver.evolve_prompts(history, rejection_log)
             
-            # Apply Updates (Re-instantiate agents with new prompts if changed)
+            # Apply Updates (Update agent system prompts)
             if new_attacker_p and new_attacker_p != self.prompt_evolver.current_attacker_prompt:
                 print("✨ APPLYING NEW ATTACKER PROMPT")
                 self.prompt_evolver.current_attacker_prompt = new_attacker_p
-                # Re-create agent with new system instruction
-                self.attacker = AttackerAgent() # Limitation: Init doesn't take prompt arg yet, need to fix AttackerAgent
-                # Actually, easier to just hack the model object if possible, or update AttackerAgent to accept prompt
-                self.attacker.model = genai.GenerativeModel(
-                    model_name=config.MODEL_NAME,
-                    system_instruction=new_attacker_p,
-                    generation_config=config.GENERATION_CONFIG
-                )
+                # Update Attacker Agent Prompt
+                self.attacker.system_prompt = new_attacker_p
 
             if new_defender_p and new_defender_p != self.prompt_evolver.current_defender_prompt:
                 print("✨ APPLYING NEW DEFENDER PROMPT")
                 self.prompt_evolver.current_defender_prompt = new_defender_p
-                # Re-create Defender (Preserving Policy DB!)
-                self.defender.model = genai.GenerativeModel(
-                    model_name=config.MODEL_NAME,
-                    system_instruction=new_defender_p,
-                    generation_config=config.GENERATION_CONFIG
-                )
+                # Update Defender Agent Prompt
+                self.defender.system_prompt = new_defender_p
 
         return {
             "iteration": self.iteration_count,

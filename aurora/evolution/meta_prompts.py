@@ -1,10 +1,9 @@
-import google.generativeai as genai
 from aurora import config
 from aurora.agents.prompts import ATTACKER_SYSTEM_PROMPT, DEFENDER_SYSTEM_PROMPT
 
 class MetaPromptEvolver:
-    def __init__(self, model_name=config.MODEL_NAME):
-        self.model = genai.GenerativeModel(model_name=model_name)
+    def __init__(self, llm_handler):
+        self.llm_handler = llm_handler # Use the shared handler
         self.current_attacker_prompt = ATTACKER_SYSTEM_PROMPT
         self.current_defender_prompt = DEFENDER_SYSTEM_PROMPT
 
@@ -70,8 +69,8 @@ class MetaPromptEvolver:
         """
         
         try:
-            response = self.model.generate_content(meta_prompt)
-            new_prompt = response.text.replace("```", "").strip()
+            response_text = self.llm_handler.generate(meta_prompt)
+            new_prompt = response_text.replace("```", "").strip()
             return new_prompt
         except Exception as e:
             print(f"      ⚠️ Evolution failed: {e}")
