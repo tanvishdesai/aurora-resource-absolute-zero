@@ -1,3 +1,4 @@
+import os
 
 # Model Configuration
 MODEL_PATH = "/kaggle/input/qwen2.5/transformers/14b-instruct/1" # Default Kaggle path
