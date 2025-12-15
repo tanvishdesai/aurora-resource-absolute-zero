@@ -1,0 +1,352 @@
+[
+  {
+    "id": "policy_0",
+    "scenario_summary": "Scenario 0: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_1",
+    "scenario_summary": "Scenario 1: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_2",
+    "scenario_summary": "Scenario 2: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_3",
+    "scenario_summary": "Scenario 3: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_4",
+    "scenario_summary": "Scenario 4: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_5",
+    "scenario_summary": "Scenario 5: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_6",
+    "scenario_summary": "Scenario 6: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_7",
+    "scenario_summary": "Scenario 7: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_8",
+    "scenario_summary": "Scenario 8: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_9",
+    "scenario_summary": "Scenario 9: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_10",
+    "scenario_summary": "Scenario 10: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_11",
+    "scenario_summary": "Scenario 11: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_12",
+    "scenario_summary": "Scenario 12: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_13",
+    "scenario_summary": "Scenario 13: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_14",
+    "scenario_summary": "Scenario 14: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_15",
+    "scenario_summary": "Scenario 15: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_16",
+    "scenario_summary": "Scenario 16: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_17",
+    "scenario_summary": "Scenario 17: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_18",
+    "scenario_summary": "Scenario 18: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_19",
+    "scenario_summary": "Scenario 19: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_20",
+    "scenario_summary": "Scenario 20: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_21",
+    "scenario_summary": "Scenario 21: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_22",
+    "scenario_summary": "Scenario 22: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_23",
+    "scenario_summary": "Scenario 23: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_24",
+    "scenario_summary": "Scenario 24: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_25",
+    "scenario_summary": "Scenario 25: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_26",
+    "scenario_summary": "Scenario 26: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_27",
+    "scenario_summary": "Scenario 27: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_28",
+    "scenario_summary": "Scenario 28: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_29",
+    "scenario_summary": "Scenario 29: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_30",
+    "scenario_summary": "Scenario 30: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_31",
+    "scenario_summary": "Scenario 31: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_32",
+    "scenario_summary": "Scenario 32: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_33",
+    "scenario_summary": "Scenario 33: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_34",
+    "scenario_summary": "Scenario 34: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_35",
+    "scenario_summary": "Scenario 35: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_36",
+    "scenario_summary": "Scenario 36: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_37",
+    "scenario_summary": "Scenario 37: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_38",
+    "scenario_summary": "Scenario 38: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_39",
+    "scenario_summary": "Scenario 39: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_40",
+    "scenario_summary": "Scenario 40: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_41",
+    "scenario_summary": "Scenario 41: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_42",
+    "scenario_summary": "Scenario 42: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_43",
+    "scenario_summary": "Scenario 43: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_44",
+    "scenario_summary": "Scenario 44: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_45",
+    "scenario_summary": "Scenario 45: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_46",
+    "scenario_summary": "Scenario 46: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_47",
+    "scenario_summary": "Scenario 47: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_48",
+    "scenario_summary": "Scenario 48: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  },
+  {
+    "id": "policy_49",
+    "scenario_summary": "Scenario 49: Web workload with high traffic.",
+    "policy_summary": "Allocate web tasks to Node A, batch to Node B.",
+    "explanation": "Node A has high bandwidth suitable for web tasks. Node B is optimized for compute. This allocation minimizes latency.",
+    "generated_at": "2025-12-15T10:00:00"
+  }
+]

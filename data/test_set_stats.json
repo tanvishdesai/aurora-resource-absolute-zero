@@ -1,0 +1,8 @@
+{
+  "total_scenarios": 100,
+  "by_difficulty": {
+    "easy": 30,
+    "medium": 40,
+    "hard": 30
+  }
+}
