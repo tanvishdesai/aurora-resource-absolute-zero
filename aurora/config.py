@@ -1,7 +1,7 @@
 import os
 
 # Model Configuration
-MODEL_PATH = "/kaggle/input/qwen2.5/transformers/14b/1" # Default Kaggle path
+MODEL_PATH = "/kaggle/input/qwen-3/transformers/8b/1" # Default Kaggle path
 
 # Simulator Configuration
 DEFAULT_TIME_STEP = 1.0  # seconds
