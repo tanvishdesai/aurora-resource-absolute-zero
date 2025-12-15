@@ -9,7 +9,14 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # Add current directory to python path to ensure aurora modules are found
-sys.path.append(os.getcwd())
+try:
+    # If running as a script
+    project_root = os.path.dirname(os.path.abspath(__file__))
+except NameError:
+    # If running in a Jupyter Notebook cell
+    project_root = os.getcwd()
+
+sys.path.append(project_root)
 
 from aurora import config
 from aurora.llm_wrapper import QwenHandler
