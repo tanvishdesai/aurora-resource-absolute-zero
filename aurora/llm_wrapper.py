@@ -1,7 +1,7 @@
 
 import logging
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer, TextStreamer
 from aurora import config
 
 logger = logging.getLogger(__name__)
@@ -18,6 +18,7 @@ class QwenHandler:
                 torch_dtype="auto",
                 device_map="auto"
             )
+            self.streamer = TextStreamer(self.tokenizer, skip_prompt=True)
         except Exception as e:
             logger.error(f"Failed to load model from {self.model_name}: {e}")
             raise e
@@ -39,11 +40,13 @@ class QwenHandler:
         )
         
         inputs = self.tokenizer([text], return_tensors="pt").to(self.model.device)
-
+        
+        logger.info("Generating content...")
         with torch.no_grad():
             generated_ids = self.model.generate(
                 **inputs,
-                max_new_tokens=max_new_tokens
+                max_new_tokens=max_new_tokens,
+                streamer=self.streamer
             )
             
         # Decode only the new tokens
