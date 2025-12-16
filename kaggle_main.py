@@ -19,27 +19,47 @@ except NameError:
 sys.path.append(project_root)
 
 from aurora import config
-from aurora.llm_wrapper import QwenHandler
+# from aurora.llm_wrapper import QwenHandler
 from aurora.controller import MetaEvolutionaryController
 
 def main():
-    parser = argparse.ArgumentParser(description="AURORA System - Kaggle Execution with Qwen")
-    parser.add_argument("--model_path", type=str, default=config.MODEL_PATH, help="Path to the Qwen model directory")
+    parser = argparse.ArgumentParser(description="AURORA System - Kaggle Execution with Gemini API")
+    parser.add_argument("--model_name", type=str, default=config.GEMINI_MODEL_NAME, help="Gemini model name (e.g. gemini-2.5-flash)")
     parser.add_argument("--iterations", type=int, default=10, help="Number of self-play iterations")
     parser.add_argument("--mode", type=str, default="train", choices=["train", "evaluate"], help="Mode: train or evaluate")
     parser.add_argument("--data_source", type=str, default="synthetic", choices=["synthetic", "google", "azure"], help="Data source for evaluation")
     
     args = parser.parse_args()
 
-    print(f"🚀 Starting AURORA in {args.mode.upper()} mode using Qwen model at {args.model_path}")
+    print(f"🚀 Starting AURORA in {args.mode.upper()} mode using Gemini API")
     
     # 1. Initialize LLM Handler
+    # >>> GEMINI INTEGRATION START <<<
+    # Replace these placeholders with your actual Gemini API keys.
+    # You can add as many as you want to support rotation.
+    GEMINI_API_KEYS = [
+        "YOUR_API_KEY_1",
+        "YOUR_API_KEY_2",
+        "YOUR_API_KEY_3",
+        "YOUR_API_KEY_4",
+        "YOUR_API_KEY_5",
+        "YOUR_API_KEY_6",
+        "YOUR_API_KEY_7",
+        "YOUR_API_KEY_8",
+        "YOUR_API_KEY_9",
+        "YOUR_API_KEY_10",
+        "YOUR_API_KEY_11", # Adding >10 as requested
+    ]
+    
     try:
-        llm_handler = QwenHandler(model_name_or_path=args.model_path)
-        print("✅ Qwen Model Loaded Successfully.")
+        from aurora.gemini_wrapper import GeminiHandler
+        print(f"🚀 Initializing Gemini Handler with {len(GEMINI_API_KEYS)} keys (Model: {args.model_name})...")
+        llm_handler = GeminiHandler(api_keys=GEMINI_API_KEYS, model_name=args.model_name)
+        print("✅ Gemini Handler Loaded Successfully.")
     except Exception as e:
-        print(f"❌ Failed to load Qwen Model: {e}")
+        print(f"❌ Failed to load Gemini Handler: {e}")
         return
+    # >>> GEMINI INTEGRATION END <<<
 
     # 2. Initialize Controller with injected LLM Handler
     controller = MetaEvolutionaryController(llm_handler=llm_handler)
